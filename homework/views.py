@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import HomeworkForm
+from .forms import HomeworkForm, TagForm
 from django.utils import timezone
 from .models import Homework, Tag
 from django.contrib.auth.decorators import login_required
@@ -56,3 +56,15 @@ def delete_homework(request, homework_id):
     homework = Homework.objects.get(id=homework_id)
     homework.delete()
     return redirect('homework_list')
+
+
+def add_tag(request):
+    if request.method == "POST":
+        form = TagForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('homework_list')
+    else:
+        form = TagForm()  
+
+    return render(request, "addtag.html", {'form': form})

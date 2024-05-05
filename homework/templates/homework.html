@@ -73,6 +73,18 @@
             color: #666;
         }
 
+        .feature-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-box h3 {
+            margin-top: 0;
+        }
+
         button[type="submit"]:hover {
             background-color: #45a049;
         }
@@ -99,9 +111,16 @@
             {{ form.sub_headline }}
             <label for="due_date">Due Date:</label>
             {{ form.due_date }}
-            <label for="tags">Tags:</label>
-            {{ form.tags }}
+
+            <div class="fea">
+                <label for="tags">Tags:</label>
+                {{ form.tags }}
+                <a href="{% url 'addtag' %}">
+                    <h3>Add tag</h3>
+                </a>
+            </div>
             <button type="submit">Submit</button>
+
         </form>
     </div>
 

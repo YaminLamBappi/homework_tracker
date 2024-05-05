@@ -1,6 +1,6 @@
 # homework/forms.py
 from django import forms
-from .models import Homework
+from .models import Homework, Tag
 
 class HomeworkForm(forms.ModelForm):
     class Meta:
@@ -9,3 +9,7 @@ class HomeworkForm(forms.ModelForm):
         widgets = {
             'due_date': forms.DateInput(attrs={'type': 'date'})
         }
+class TagForm(forms.ModelForm):
+    class Meta: 
+        model = Tag
+        fields = ['tag_name',]
