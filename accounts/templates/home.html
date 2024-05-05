@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom-color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            border-bottom-color: #007bff;
+        }
+
+        /* Main Content Styles */
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        /* Unique Design Elements */
+        .jumbotron {
+            background-color: #007bff;
+            color: #fff;
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .jumbotron h2 {
+            margin-top: 0;
+        }
+
+        .feature-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-box h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to Your Home Page</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h2>DemoProject</h2>
+
+        </div>
+
+        <div class="feature-box">
+            <h3><a href="{% url 'homework_list' %}">Homework</a></h3>
+            <p>See your Daily Homework</p>
+        </div>
+        <div class="feature-box">
+            <h3>Notes</h3>
+            <p> Please note if you need</p>
+        </div>
+        <div class="feature-box">
+            <h3><a href="{% url 'profile' %}">Profile</a></h3>
+            <p>Visit your profile</p>
+        </div>
+    </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Your Website. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

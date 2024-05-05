@@ -1,0 +1,86 @@
+<!-- profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-info {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom-color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            border-bottom-color: #007bff;
+        }
+
+        .profile-info p {
+            margin-bottom: 10px;
+        }
+
+        .profile-info p strong {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<nav>
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'homework_list' %}">Homework</a></li>
+        <li><a href="#">Notes</a></li>
+        <li><a href="{% url 'profile' %}">Profile</a></li>
+    </ul>
+</nav>
+
+<body>
+    <h1>User Profile</h1>
+    <div class="profile-info">
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>First Name:</strong> {{ user.first_name }}</p>
+        <p><strong>Last Name:</strong> {{ user.last_name }}</p>
+        <a href="{% url 'update_profile' %}">Update Profile</a>
+    </div>
+
+</body>
+
+</html>

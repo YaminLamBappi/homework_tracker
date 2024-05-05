@@ -1,0 +1,11 @@
+<h2>Edit Homework</h2>
+
+{% if not editing_available %}
+<p>The due date has passed. Editing is not available.</p>
+{% else %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update</button>
+</form>
+{% endif %}
