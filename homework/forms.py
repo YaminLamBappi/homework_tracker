@@ -1,13 +1,6 @@
 from django import forms
-from .models import Homework, Tag, Notes
+from .models import Homework, Tag
 
-class NotesForm(forms.ModelForm):
-    class Meta:
-        model = Notes
-        fields = ['note','subject','file', 'date']
-        widgets = {
-            'date': forms.DateInput(attrs={'type': 'date'})
-        }
 
 class HomeworkForm(forms.ModelForm):
     class Meta:
