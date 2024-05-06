@@ -54,6 +54,27 @@
             margin-right: 10px;
         }
 
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #666;
+        }
+
         .edit-btn,
         .delete-btn {
             display: inline-block;
@@ -73,6 +94,14 @@
 </head>
 
 <body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'homework_list' %}">Homework</a></li>
+            <li><a href="{% url 'viewnote' %}">Notes</a></li>
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+        </ul>
+    </nav>
     <div class="container">
         <h1>Notes List</h1>
 
