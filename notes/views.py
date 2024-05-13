@@ -48,3 +48,9 @@ def add_notes(request):
     else:
         form = NotesForm()
     return render(request, "addnotes.html", {'form':form})    
+
+@login_required
+def delete_notes(request, note_id):
+    note = Notes.objects.get(id = note_id)
+    note.delete()
+    return redirect('viewnote')

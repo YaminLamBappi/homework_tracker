@@ -1,129 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html"%}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homework - Add Homework</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
+{% block content %}
 
-        h2 {
-            color: #333;
-            text-align: center;
-        }
+<div>
+    <h2>Add Homework</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="homework_task">Homework Task:</label>
+        {{ form.homework_task }}
+        <label for="sub_headline">Subheadline:</label>
+        {{ form.sub_headline }}
+        <label for="due_date">Due Date:</label>
+        {{ form.due_date }}
 
-        form {
-            max-width: 500px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+        <div class="fea">
+            <label for="tags">Tags:</label>
+            {{ form.tags }}
+            <a href="{% url 'addtag' %}">
+                <h3>Add tag</h3>
+            </a>
+        </div>
+        <button type="submit">Submit</button>
 
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        input[type="text"],
-        select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        button[type="submit"] {
-            background-color: #4caf50;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        /* Navigation Styles */
-        nav ul {
-            list-style: none;
-            padding: 0;
-            text-align: center;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        nav ul li a {
-            color: #333;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav ul li a:hover {
-            color: #666;
-        }
-
-        .feature-box {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-box h3 {
-            margin-top: 0;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #45a049;
-        }
-    </style>
-</head>
-
-<body>
-    <nav>
-        <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'homework_list' %}">Homework</a></li>
-            <li><a href="#">Notes</a></li>
-            <li><a href="{% url 'profile' %}">Profile</a></li>
-        </ul>
-    </nav>
-
-    <div>
-        <h2>Add Homework</h2>
-        <form method="post">
-            {% csrf_token %}
-            <label for="homework_task">Homework Task:</label>
-            {{ form.homework_task }}
-            <label for="sub_headline">Subheadline:</label>
-            {{ form.sub_headline }}
-            <label for="due_date">Due Date:</label>
-            {{ form.due_date }}
-
-            <div class="fea">
-                <label for="tags">Tags:</label>
-                {{ form.tags }}
-                <a href="{% url 'addtag' %}">
-                    <h3>Add tag</h3>
-                </a>
-            </div>
-            <button type="submit">Submit</button>
-
-        </form>
-    </div>
-
-</body>
-
-</html>
+    </form>
+</div>
+{%endblock%}

@@ -6,7 +6,7 @@ class Notes(models.Model):
   user = models.ForeignKey(User, on_delete=models.CASCADE)
   subject = models.CharField(max_length=255, null=True, blank=True)
   note = models.CharField(max_length=233, blank=False)
-  file = models.FileField()
+  file = models.FileField(null=True, blank=True)
   date = models.DateField()
 
   def __str__(self) :
